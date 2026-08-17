@@ -1,0 +1,81 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@theme {
+  --color-ink: oklch(0.145 0 0);
+  --color-ink-2: oklch(0.19 0.005 60);
+  --color-ink-3: oklch(0.245 0.008 60);
+  --color-bone: oklch(0.97 0.004 80);
+  --color-mute: oklch(0.68 0.01 70);
+  --color-flame: oklch(0.645 0.216 39.5);
+  --color-flame-dim: oklch(0.55 0.19 39.5);
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.97 0.004 80);
+}
+
+@utility container-x {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 84rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 1024px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-flame);
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>");
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  ::selection {
+    background: var(--color-flame);
+    color: var(--color-ink);
+  }
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-flame);
+  }
+}
