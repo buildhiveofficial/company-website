@@ -39,9 +39,9 @@ export function Footer() {
             <div>
               <h4 className="text-xs tracking-[0.2em] text-flame">Services</h4>
               <ul className="mt-5 space-y-3">
-                {SERVICES.slice(0, 5).map((s) => (
-                  <li key={s.n} className="text-sm text-mute">
-                    {s.t}
+                {['Design','Build','Grow'].slice(0, 5).map((s) => (
+                  <li key={s} className="text-sm text-mute">
+                    {s}
                   </li>
                 ))}
               </ul>

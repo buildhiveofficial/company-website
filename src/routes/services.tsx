@@ -2,8 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/motion-primitives";
-import { FAQS, PILLARS, SERVICES } from "@/lib/site-data";
+import { FAQS, PILLARS, } from "@/lib/site-data";
 import { useState } from "react";
+import { categoryDescriptions } from "@/lib/site-data";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/services")({
 
 function Services() {
   const [open, setOpen] = useState<number | null>(0);
+  const [activeCategory, setActiveCategory] = useState("design");
 
   return (
     <>
@@ -41,20 +43,64 @@ function Services() {
         </div>
       </section>
 
-      <section className="container-x pb-20 md:pb-28">
-        <h2 className="font-display text-4xl md:text-6xl">Service list</h2>
-        <div className="mt-12 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s, i) => (
-            <Reveal key={s.n} delay={(i % 4) * 0.06}>
-              <motion.div whileHover={{ y: -6 }} className="h-full bg-ink p-8">
-                <span className="font-display text-xs tracking-[0.25em] text-flame">{s.n}</span>
-                <h3 className="mt-4 font-display text-xl">{s.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-mute">{s.d}</p>
-              </motion.div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+<section className="container-x pb-20 md:pb-28">
+  {/* =========================
+      HEADER + CATEGORY SELECT
+  ========================= */}
+  <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+    <h2 className="font-display text-4xl md:text-6xl">
+      Service list
+    </h2>
+
+    <div className="flex flex-wrap gap-2">
+      {["design", "build", "grow"].map((category) => (
+        <button
+          key={category}
+          onClick={() => setActiveCategory(category)}
+          className={`border px-5 py-2.5 font-display text-xs uppercase tracking-[0.2em] transition-all ${
+            activeCategory === category
+              ? "border-flame bg-flame text-ink"
+              : "border-white/20 text-mute hover:border-white/40 hover:text-bone"
+          }`}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  {/* =========================
+      SELECTED CATEGORY
+      SUBCATEGORIES
+  ========================= */}
+  <div className="mt-12 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+    {categoryDescriptions
+      .find((item) => item.category === activeCategory)
+      ?.subcategories.map((sub, i) => (
+        <Reveal
+          key={sub.name}
+          delay={(i % 4) * 0.06}
+        >
+          <motion.div
+            whileHover={{ y: -6 }}
+            className="h-full bg-ink p-8"
+          >
+            <span className="font-display text-xs tracking-[0.25em] text-flame">
+              0{String(i + 1)}
+            </span>
+
+            <h3 className="mt-4 font-display text-xl">
+              {sub.name}
+            </h3>
+
+            <p className="mt-3 text-sm leading-relaxed text-mute">
+              {sub.description}
+            </p>
+          </motion.div>
+        </Reveal>
+      ))}
+  </div>
+</section>
 
       <section className="container-x pb-24 md:pb-32">
         <h2 className="font-display text-4xl md:text-6xl">FAQs</h2>

@@ -68,7 +68,7 @@ function Home() {
                 className="aspect-[4/3] w-full object-cover"
               />
               <div className="absolute -bottom-6 -left-6 hidden bg-flame px-7 py-6 sm:block">
-                <p className="font-display text-4xl text-ink">12+</p>
+                <p className="font-display text-4xl text-ink">10+</p>
                 <p className="text-xs uppercase tracking-[0.2em] text-ink/80">Years on site</p>
               </div>
             </div>

@@ -5,6 +5,7 @@ import { PILLARS } from "@/lib/site-data";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import { categoryDescriptions } from "@/lib/site-data";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -139,13 +140,13 @@ export function ScrollShowcase() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
       </div>
 
-      <div className="container-x relative flex h-full items-center">
+      <div className="container-x relative flex h-full items-center ">
         <div className="relative w-full max-w-2xl">
           {PILLARS.map((p) => (
             <div
               key={p.id}
               data-panel=""
-              className="absolute inset-x-0 top-1/2 -translate-y-1/2"
+              className="absolute inset-x-0 top-1/2 -translate-y-1/4 "
             >
               <span className="font-display text-sm tracking-[0.35em] text-flame">
                 {p.id} / 03
@@ -164,16 +165,21 @@ export function ScrollShowcase() {
               </p>
 
               <ul className="mt-7 grid max-w-lg grid-cols-2 gap-x-6 gap-y-3">
-                {p.points.map((pt) => (
-                  <li
-                    key={pt}
-                    className="flex items-center gap-3 border-b border-white/10 pb-2 text-sm text-bone/80"
-                  >
-                    <span className="h-1.5 w-1.5 shrink-0 rotate-45 bg-flame" />
-                    {pt}
-                  </li>
-                ))}
-              </ul>
+  {categoryDescriptions
+    .find((item) => item.category === p.title.toLowerCase())
+    ?.subcategories.map((sub) => (
+      <li
+        key={sub.name}
+        className="border-b border-white/10 pb-2 text-sm text-bone/80"
+      >
+        <div className="flex items-center gap-3">
+          <span className="h-1.5 w-1.5 shrink-0 rotate-45 bg-flame" />
+
+          <span>{sub.name}</span>
+        </div>
+      </li>
+    ))}
+</ul>
             </div>
           ))}
         </div>
