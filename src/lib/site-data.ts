@@ -8,7 +8,7 @@ export const COMPANY = {
   tagline: "Design · Build · Grow",
   phone: "+92 301 5303063",
   email: "info@buildhivesolutions.com",
-  address: "Faisalbad, Pakistan",
+  address: "West Canal Road, Abdullah pur, Faisalabad Pakistan",
 };
 
 export const NAV = [

@@ -79,3 +79,188 @@
     background: var(--color-flame);
   }
 }
+/* =========================================
+   WhatsApp Liquid Glass / Water Button
+   ========================================= */
+
+.whatsapp-liquid {
+  position: fixed;
+
+  /* translucent glass */
+  background:
+    linear-gradient(
+      145deg,
+      rgba(51, 223, 24, 0.774),
+      rgba(28, 255, 3, 0.363) 42%,
+      rgba(37, 211, 101, 0.592)
+    );
+
+  /* glass blur */
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+
+  /* liquid border */
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  /* soft depth */
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.7),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.12),
+    inset 8px 0 18px rgba(255, 255, 255, 0.08),
+    0 10px 35px rgba(0, 0, 0, 0.22);
+
+  overflow: hidden;
+
+  /* subtle water movement */
+  animation: whatsapp-float 4s ease-in-out infinite;
+
+  isolation: isolate;
+}
+
+/* glossy water surface */
+.whatsapp-liquid::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 28% 18%,
+      rgba(48, 242, 22, 0.75),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 75% 85%,
+      rgba(37, 211, 101, 0.723),
+      transparent 42%
+    );
+
+  opacity: 0.65;
+  pointer-events: none;
+
+  animation: water-light 5s ease-in-out infinite;
+}
+
+/* moving glossy reflection */
+.whatsapp-liquid-shine {
+  position: absolute;
+  width: 80px;
+  height: 25px;
+
+  top: -8px;
+  left: -25px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  filter: blur(8px);
+
+  transform: rotate(-25deg);
+
+  animation: liquid-shine 4.5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* soft water ripple */
+.whatsapp-liquid-ripple {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  opacity: 0;
+
+  animation: water-ripple 3.5s ease-out infinite;
+
+  pointer-events: none;
+}
+
+/* Hover */
+.whatsapp-liquid:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    inset 0 1px 3px rgba(60, 221, 54, 0.8),
+    inset 0 -8px 20px rgba(78, 240, 2, 0.856),
+    0 15px 45px rgba(6, 231, 89, 0.63),
+    0 0 25px rgba(255, 255, 255, 0.18);
+}
+
+/* Floating / liquid movement */
+@keyframes whatsapp-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-3px) scale(1.015);
+  }
+}
+
+/* light moving inside glass */
+@keyframes water-light {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(5px, -3px) scale(1.05);
+  }
+}
+
+/* glossy reflection moving across */
+@keyframes liquid-shine {
+  0% {
+    transform: translateX(-35px) rotate(-25deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.7;
+  }
+
+  70% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateX(105px) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+/* water ripple */
+@keyframes water-ripple {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-liquid,
+  .whatsapp-liquid::before,
+  .whatsapp-liquid-shine,
+  .whatsapp-liquid-ripple {
+    animation: none;
+  }
+}

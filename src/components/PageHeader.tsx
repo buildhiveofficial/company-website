@@ -12,7 +12,7 @@ export function PageHeader({ kicker, title }: { kicker: string; title: string })
       />
       <div className="container-x">
         <span className="font-display text-xs tracking-[0.35em] text-flame">{kicker.toUpperCase()}</span>
-        <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[0.88] md:text-8xl">
+        <h1 className="mt-4 max-w-4xl font-display text-3xl leading-[0.88] md:text-8xl">
           <MaskWords text={title} />
         </h1>
       </div>
