@@ -79,7 +79,7 @@ export function Footer() {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://linkedin.com/company/yourcompany"
+                  href="https://www.linkedin.com/in/buildhive-solutions-864778419/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
