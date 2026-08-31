@@ -264,3 +264,175 @@
     animation: none;
   }
 }
+
+
+/* =========================================
+   Bubbly Liquid Menu Button
+   ========================================= */
+
+.menu-liquid {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.055) 45%,
+      rgba(255, 255, 255, 0.1)
+    );
+
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.12);
+
+  isolation: isolate;
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+
+  animation: menu-bubble-float 4s ease-in-out infinite;
+}
+
+/* Glass highlight */
+.menu-liquid::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+
+  border-radius: 13px;
+
+  background:
+    radial-gradient(
+      circle at 25% 15%,
+      rgba(255, 255, 255, 0.5),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+/* Moving glossy reflection */
+.menu-liquid-shine {
+  position: absolute;
+
+  width: 55px;
+  height: 16px;
+
+  top: -5px;
+  left: -25px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  filter: blur(6px);
+
+  transform: rotate(-25deg);
+
+  animation: menu-liquid-shine 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* Small internal bubble */
+.menu-liquid-bubble {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  right: 5px;
+  bottom: 4px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  filter: blur(0.5px);
+
+  animation: menu-bubble 3.5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* Hover */
+.menu-liquid:hover {
+  transform: scale(1.06);
+
+  border-color: rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.45),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.1),
+    0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Press */
+.menu-liquid:active {
+  transform: scale(0.94);
+}
+
+/* Subtle floating */
+@keyframes menu-bubble-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Shine passing through */
+@keyframes menu-liquid-shine {
+  0% {
+    transform: translateX(-25px) rotate(-25deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  65% {
+    opacity: 0.15;
+  }
+
+  100% {
+    transform: translateX(75px) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+/* Bubble movement */
+@keyframes menu-bubble {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-4px, -3px) scale(1.15);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .menu-liquid,
+  .menu-liquid-shine,
+  .menu-liquid-bubble {
+    animation: none;
+  }
+}

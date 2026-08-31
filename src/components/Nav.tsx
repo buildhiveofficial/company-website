@@ -56,18 +56,37 @@ export function Nav() {
             </Link>
           </nav>
 
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setOpen((o) => !o)}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 border border-white/15 lg:hidden"
-          >
-            <span
-              className={`block h-px w-5 bg-bone transition-transform duration-300 ${open ? "translate-y-[3px] rotate-45" : ""}`}
-            />
-            <span
-              className={`block h-px w-5 bg-bone transition-transform duration-300 ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
-            />
-          </button>
+         <button
+  aria-label="Toggle menu"
+  onClick={() => setOpen((o) => !o)}
+  className="
+    menu-liquid group relative
+    flex h-11 w-11 flex-col items-center justify-center
+    gap-1.5 overflow-hidden
+    rounded-[14px]
+    border border-white/20
+    lg:hidden
+  "
+>
+  {/* Glass shine */}
+  <span className="menu-liquid-shine" />
+
+  {/* Soft bubble */}
+  <span className="menu-liquid-bubble" />
+
+  {/* Menu lines */}
+  <span
+    className={`relative z-10 block h-px w-5 bg-bone transition-all duration-300 ${
+      open ? "translate-y-[3px] rotate-45" : ""
+    }`}
+  />
+
+  <span
+    className={`relative z-10 block h-px w-5 bg-bone transition-all duration-300 ${
+      open ? "-translate-y-[3px] -rotate-45" : ""
+    }`}
+  />
+</button>
         </div>
       </motion.header>
 
