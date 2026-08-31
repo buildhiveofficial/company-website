@@ -65,7 +65,7 @@ export function HorizontalProjects() {
   return (
     <section
       ref={root}
-      className="relative overflow-hidden bg-ink py-20 md:h-screen md:py-0"
+      className="relative overflow-hidden bg-ink py-20 md:py-0"
     >
       <div className="flex h-full flex-col justify-center">
         <div className="container-x mb-10 flex flex-wrap items-end justify-between gap-6">
