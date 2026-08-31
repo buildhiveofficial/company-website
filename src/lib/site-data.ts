@@ -7,7 +7,7 @@ export const COMPANY = {
   name: "BuildHive Solutions",
   tagline: "Design · Build · Grow",
   phone: "+92 301 5303063",
-  email: "info@buildhivesolutions.com",
+  email: "buildhiveofficial@gmail.com",
   address: "West Canal Road, Abdullah pur, Faisalabad Pakistan",
 };
 
