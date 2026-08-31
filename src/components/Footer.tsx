@@ -154,8 +154,6 @@ export function Footer() {
                     {COMPANY.email}
                   </a>
                 </li>
-
-                <li>{COMPANY.hours}</li>
               </ul>
             </div>
           </div>

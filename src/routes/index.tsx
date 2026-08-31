@@ -65,7 +65,7 @@ function Home() {
                 width={1400}
                 height={1000}
                 loading="lazy"
-                className="aspect-[4/3] w-full object-cover"
+                className="aspect-4/3 w-full object-cover"
               />
               <div className="absolute -bottom-6 -left-6 hidden bg-flame px-7 py-6 sm:block">
                 <p className="font-display text-4xl text-ink">10+</p>
