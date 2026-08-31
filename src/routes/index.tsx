@@ -72,6 +72,15 @@ function Home() {
                 <p className="text-xs uppercase tracking-[0.2em] text-ink/80">Years on site</p>
               </div>
             </div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {PROCESS.slice(2,4).map((p) => (
+                <Reveal key={p.t} className="border-l border-flame pl-5">
+                  <span className="text-xs tracking-[0.25em] text-flame">{p.s}</span>
+                  <h3 className="mt-2 font-display text-2xl">{p.t}</h3>
+                  <p className="mt-2 text-sm text-mute">{p.d}</p>
+                </Reveal>
+              ))}
+            </div>
           </Reveal>
         </div>
       </section>
