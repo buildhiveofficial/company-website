@@ -1,0 +1,54 @@
+{
+  "redirects": [
+    {
+      "source": "/construction",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/construction/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/architecture-design",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/architecture-design/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/interior-design",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/interior-design/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/building-material-services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/building-material-services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/design",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/design/",
+      "destination": "/services",
+      "permanent": true
+    }
+  ]
+}
