@@ -60,10 +60,10 @@ export const PROJECTS = [
 ];
 
 export const STATS = [
-  { value: 180, suffix: "+", label: "Projects delivered" },
-  { value: 10, suffix: "yrs", label: "On Pakistani sites" },
-  { value: 96, suffix: "%", label: "On-time handover" },
-  { value: 45, suffix: "+", label: "In-house team" },
+  { value: 3, suffix: "svcs", label: "Design · Build · Grow" },
+  { value: 1, suffix: "yrs", label: "Post-handover warranty" },
+  { value: 100, suffix: "%", label: "Written scope, no hidden costs" },
+  { value: 25, suffix: "+", label: "In-house team" },
 ];
 
 export const PROCESS = [

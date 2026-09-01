@@ -145,6 +145,14 @@ export function Footer() {
                     {COMPANY.phone}
                   </a>
                 </li>
+                <li>
+                  <a
+                    href={`https://wa.me/+923129020000`}
+                    className="hover:text-bone"
+                  >
+                    +923129020000
+                  </a>
+                </li>
 
                 <li>
                   <a

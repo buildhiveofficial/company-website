@@ -387,21 +387,15 @@ function About() {
         <Reveal delay={0.12}>
           <h2 className="font-display text-4xl leading-[0.95] md:text-5xl">
             From a two-man drafting room to{" "}
-            <span className="text-flame">45+ people on site</span>
+            <span className="text-flame">25+ people on site</span>
           </h2>
 
           <p className="mt-6 leading-relaxed text-mute">
-            BuildHive Solutions started in 2014 doing structural drawings for
-            other contractors. We watched too many good designs get butchered
-            on site, so we started building them ourselves. Today we run
-            design, costing, execution and post-handover care in-house.
+           BuildHive Solutions brings design, construction, and digital growth together under one roof, because too many good projects fall apart when they're split across companies that don't talk to each other.
           </p>
 
           <p className="mt-4 leading-relaxed text-mute">
-            The model is simple: fixed scope in writing, weekly photographic
-            progress reports, milestone-based billing and a snag list that gets
-            closed before we invoice the final payment. No variation-order
-            games.
+            Our model is simple: fixed scope in writing, weekly photographic progress reports, milestone-based billing, and a snag list that gets closed before we invoice the final payment.
           </p>
 
           <ul className="mt-8 space-y-3">

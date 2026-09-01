@@ -121,13 +121,12 @@ export function HorizontalProjects() {
               <div className="flex items-end justify-between border-b border-white/10 py-4">
                 <div>
                   <h3 className="font-display text-2xl">{p.title}</h3>
-                  <p className="text-sm text-mute">{p.loc}</p>
+                  {/* <p className="text-sm text-mute">{p.loc}</p> */}
                 </div>
 
                 <p className="text-right text-xs text-mute">
                   {p.area}
-                  <br />
-                  {p.year}
+                  
                 </p>
               </div>
             </article>
