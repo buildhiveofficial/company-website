@@ -60,7 +60,7 @@ export const PROJECTS = [
 ];
 
 export const STATS = [
-  { value: 3, suffix: "serv", label: "Design · Build · Grow" },
+  { value: 3, suffix: "svcs", label: "Design · Build · Grow" },
   { value: 1, suffix: "yrs", label: "Post-handover warranty" },
   { value: 100, suffix: "%", label: "Written scope, no hidden costs" },
   { value: 25, suffix: "+", label: "In-house team" },
